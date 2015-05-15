@@ -1,0 +1,80 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@font-face {
+  font-family: Kaushan;
+  src: url("../fonts/KaushanScript-Regular.otf") format("opentype"); }
+body {
+  background-image: url("../images/welcome.jpg");
+  background-size: cover;
+  color: white;
+  overflow: hidden; }
+  body #background {
+    height: 100vh;
+    width: 100vw; }
+  body .welcome {
+    margin-top: 20%;
+    text-align: center; }
+    body .welcome h1 {
+      font-size: 86px;
+      margin-bottom: 20px;
+      margin-top: 20px; }
+  body .hint {
+    bottom: 0;
+    position: absolute;
+    right: 50px; }
+    body .hint h4 {
+      font-family: Lato, sans-serif;
+      font-weight: 300; }
+  body .menu {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    position: absolute;
+    left: -17rem;
+    overflow-y: auto;
+    padding: 20px;
+    top: 0;
+    width: 14rem;
+    z-index: 2;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    body .menu h1 {
+      font-size: 40px;
+      text-align: center; }
+    body .menu hr {
+      width: 8rem; }
+    body .menu .information {
+      color: white;
+      font-family: Lato, sans-serif; }
+      body .menu .information h3, body .menu .information h4 {
+        font-weight: 300; }
+    body .menu .buttons {
+      margin: auto;
+      width: 40%; }
+      body .menu .buttons span {
+        font-size: 26px;
+        padding: 5px; }
+
+h1 {
+  font-family: Kaushan, sans-serif;
+  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear; }
+
+small {
+  font-family: Lato, sans-serif;
+  font-size: 30px; }
+
+/* Color Changing Animation
+   Thanks Dan Eden for sharing this
+   method of animating text using titles
+   https://github.com/daneden/animate.css/issues/354 */
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg); }
+  to {
+    -webkit-filter: hue-rotate(-360deg); } }
+
+/*# sourceMappingURL=stylesheet.css.map */

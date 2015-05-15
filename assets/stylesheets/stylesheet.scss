@@ -1,0 +1,117 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+@font-face {
+  font-family: Kaushan;
+  src: url('../fonts/KaushanScript-Regular.otf') format('opentype');
+}
+
+$heading-font: Kaushan, sans-serif;
+$sans-serif-font: Lato, sans-serif;
+
+body {
+  background-image: url('../images/welcome.jpg');
+  background-size: cover;
+  color: white;
+  overflow: hidden;
+
+  #background {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .welcome {
+    margin-top: 20%;
+    text-align: center;
+
+    h1 {
+      font-size: 86px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  .hint {
+    bottom: 0;
+    position: absolute;
+    right: 50px;
+
+    h4 {
+      font-family: $sans-serif-font;
+      font-weight: 300;
+    }
+  }
+
+  .menu {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    position: absolute;
+    left: -17rem;
+    overflow-y: auto;
+    padding: 20px;
+    top: 0;
+    width: 14rem;
+    z-index: 2;
+
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    hr {
+      width: 8rem;
+    }
+
+    .information {
+      color: white;
+      font-family: $sans-serif-font;
+
+      h3, h4 {
+        font-weight: 300;
+      }
+    }
+
+    .buttons {
+      margin: auto;
+      width: 40%;
+
+      span {
+        font-size: 26px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+h1 {
+  font-family: $heading-font;
+  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear;
+}
+
+small {
+  font-family: $sans-serif-font;
+  font-size: 30px;
+}
+
+/* Color Changing Animation
+   Thanks Dan Eden for sharing this
+   method of animating text using titles
+   https://github.com/daneden/animate.css/issues/354 */
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
