@@ -82,7 +82,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Sass
-assets/stylesheets/stylesheet.css
 .sass-cache
 *.css.map
 
