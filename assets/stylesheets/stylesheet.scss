@@ -8,6 +8,19 @@
 $heading-font: Kaushan, sans-serif;
 $sans-serif-font: Lato, sans-serif;
 
+h1 {
+  font-family: $heading-font;
+  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear;
+}
+
+small {
+  font-family: $sans-serif-font;
+  font-size: 30px;
+}
+
 body {
   background-image: url('../images/welcome.jpg');
   background-size: cover;
@@ -87,19 +100,6 @@ body {
       }
     }
   }
-}
-
-h1 {
-  font-family: $heading-font;
-  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 60s infinite linear;
-}
-
-small {
-  font-family: $sans-serif-font;
-  font-size: 30px;
 }
 
 /* Color Changing Animation
