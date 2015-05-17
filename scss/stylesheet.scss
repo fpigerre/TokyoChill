@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+@font-face {
+  font-family: Kaushan;
+  src: url('../fonts/KaushanScript-Regular.otf') format('opentype');
+}
+
+$heading-font: Kaushan, sans-serif;
+$sans-serif-font: Lato, sans-serif;
+
+h1 {
+  font-family: $heading-font;
+  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear;
+}
+
+small {
+  font-family: $sans-serif-font;
+  font-size: 30px;
+}
+
+h1, h3, h4, small, span {
+  color: white;
+}
+
+ion-side-menu-content {
+  background-image: url('../img/welcome.jpg');
+  background-size: cover;
+  overflow: hidden;
+
+  ion-content {
+    color: white;
+    #background {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .welcome {
+      margin-top: 20%;
+      text-align: center;
+
+      h1 {
+        font-size: 86px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.menu {
+  background: black;
+  padding: 20px;
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  hr {
+    width: 8rem;
+  }
+
+  .information {
+    font-family: $sans-serif-font;
+
+    h3, h4 {
+      font-weight: 300;
+    }
+  }
+
+  .buttons {
+    margin: auto;
+    width: 40%;
+
+    span {
+      font-size: 26px;
+      padding: 5px;
+    }
+  }
+}
+
+/* Color Changing Animation
+   Thanks Dan Eden for sharing this
+   method of animating text using titles
+   https://github.com/daneden/animate.css/issues/354 */
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
