@@ -11,34 +11,12 @@ $(document).ready(function () {
         out: {effect: 'tada'}
     });
 
-    setInterval(function () {
-        // Change the background image of the body to an image between one and ten
-        $('body').css('background-image', 'url(assets/images/' + Math.floor((Math.random() * 10) + 1) + '.jpg)');
-    }, 180000); // Three minutes - 180 000
-
     // Code to execute after loading
     window.setTimeout(function () {
         $('.welcome').fadeOut('slow');
         $('.hint').fadeOut('slow');
 
         $('#background').show();
-
-        // Bind menu activation to a key
-        var menu = $('nav');
-        var exposed = false;
-        $(document).keydown(function (key) {
-            // Check if home key was pressed
-            if (key.keyCode == 36) {
-                // Activate menu
-                if (exposed) {
-                    menu.transition({x: '-20.125rem'});
-                    exposed = false;
-                } else {
-                    menu.transition({x: '20.125rem'});
-                    exposed = true;
-                }
-            }
-        });
 
         // Make it rain!!
         var engine = new RainyDay({
@@ -52,6 +30,12 @@ $(document).ready(function () {
             [3, 3, 1]           // ... and 1 drop of size from 3 - 6 ...
         ], 100);                   // ... every 100ms
 
+        // Change the background image every three minutes
+        setInterval(function () {
+            // Random number is added to trick the number into thinking a new image is being added
+            $('#background').src = 'assets/images/' + Math.floor((Math.random() * 5) + 1) + '.jpg?rand=' + Math.random();
+        }, 180000);
+
         // Play some relaxing music
         SC.initialize({
             client_id: "YOUR_CLIENT_ID",
@@ -59,7 +43,7 @@ $(document).ready(function () {
         });
 
         // 27748789
-        SC.get('/playlists/54491963', function (playlist) {
+        SC.get('/playlists/21614704', function (playlist) {
             for (var i = 0; i < playlist.tracks.length; i++) {
                 trackArray.push(playlist.tracks[i]);
             }
@@ -67,6 +51,24 @@ $(document).ready(function () {
             play(trackNumber);
         });
 
+        // Bind menu activation to a key
+        var menu = $('nav');
+        var exposed = false;
+
+        // Setup menu last in order to avoid update errors
+        $(document).keydown(function (key) {
+            // Check if home key was pressed
+            if (key.keyCode == 36) {
+                // Activate menu
+                if (exposed) {
+                    menu.transition({x: '-20.125rem'});
+                    exposed = false;
+                } else {
+                    menu.transition({x: '20.125rem'});
+                    exposed = true;
+                }
+            }
+        });
     }, 5000);
 });
 
@@ -103,6 +105,7 @@ function play(trackNumber) {
                 trackNumber--;
                 playButton.show();
                 play(trackNumber);
+                updateSoundInformation();
             });
 
             $('.next').click(function () {
@@ -110,6 +113,7 @@ function play(trackNumber) {
                 playButton.show();
                 trackNumber++;
                 play(trackNumber);
+                updateSoundInformation();
             });
         });
     }
