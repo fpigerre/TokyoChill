@@ -86,6 +86,7 @@ function play(trackNumber) {
             currentTrack = sound;
             sound.play();
             playButton.hide();
+            pauseButton.show();
             updateSoundInformation(currentTrack);
 
             playButton.click(function () {
@@ -103,16 +104,16 @@ function play(trackNumber) {
             $('.previous').click(function () {
                 sound.stop();
                 trackNumber--;
-                playButton.show();
                 play(trackNumber);
+                pauseButton.show();
                 updateSoundInformation();
             });
 
             $('.next').click(function () {
                 sound.stop();
-                playButton.show();
                 trackNumber++;
                 play(trackNumber);
+                pauseButton.show();
                 updateSoundInformation();
             });
         });
